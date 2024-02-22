@@ -1,5 +1,6 @@
 export type MainNavigationParamList = {
-  Home: any;
+  DrawerNavigation: any;
+  Settings: any;
 };
 
 export type AuthNavigationParamList = {

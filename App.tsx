@@ -6,20 +6,26 @@
  */
 
 import React from 'react';
+import { LogBox } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 import AuthContextProvider from './src/context/AuthContext';
 import RootNavigator from './src/navigators/RootNavigator';
 
 // const Stack = createNativeStackNavigator();
 
+LogBox.ignoreAllLogs();
+
 function App(): React.JSX.Element {
   return (
-    <AuthContextProvider>
+    <GestureHandlerRootView style={{flex: 1}}>
       <NavigationContainer>
-        <RootNavigator />
+        <AuthContextProvider>
+          <RootNavigator />
+        </AuthContextProvider>
       </NavigationContainer>
-    </AuthContextProvider>
+    </GestureHandlerRootView>
   );
 }
 

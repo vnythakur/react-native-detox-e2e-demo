@@ -2,20 +2,28 @@ import React from 'react'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { MainNavigationParamList } from './interface'
-import Home from '../screens/Home'
+import DrawerNavigation from './DrawerNavigator'
+import Pages from '../screens/Pages'
 
 
 const MainStack = createNativeStackNavigator<MainNavigationParamList>()
 
 const MainStackNavigator = () => {
     return (
-        <MainStack.Navigator initialRouteName='Home'>
+        <MainStack.Navigator initialRouteName='DrawerNavigation'>
             <MainStack.Screen
-                name='Home'
-                component={Home}
+                name='DrawerNavigation'
+                component={DrawerNavigation}
                 options={{
                     headerShown: false,
                 }}
+            />
+            <MainStack.Screen
+                name='Pages'
+                component={Pages}
+                // options={{
+                //     headerShown: false,
+                // }}
             />
         </MainStack.Navigator>
     )
